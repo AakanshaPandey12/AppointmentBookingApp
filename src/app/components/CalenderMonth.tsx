@@ -6,14 +6,12 @@ import {
   endOfMonth,
   startOfWeek,
   endOfWeek,
-  isSameDay,
   isSameMonth,
   format,
 } from "date-fns";
 import { Appointment } from "../types";
 import { Patient } from "../types";
 import { Category } from "../types";
-import { UUID } from "../types";
 import { AppointmentHoverCard }  from "./AppointmentHoverCard";
 
 
@@ -35,7 +33,7 @@ export function CalendarMonth({ filterAppointments , patients, categories, month
   const calendarEnd = endOfWeek(monthEnd, { weekStartsOn: 1 });
 
   const dates = useMemo(() => {
-    let days: Date[] = [];
+    const days: Date[] = [];
     let d = calendarStart;
     while (d <= calendarEnd) {
       days.push(d);

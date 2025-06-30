@@ -8,7 +8,7 @@ import { AppointmentDialog } from "./components/AppointmentDialog";
 import { Appointment } from "./types";
 import { Patient } from "./types";
 import { Category } from "./types";
-import { addDays, isSameDay, endOfMonth, startOfWeek, endOfWeek, addWeeks, isBefore } from "date-fns";
+import { addDays, isSameDay, startOfWeek, endOfWeek } from "date-fns";
 import { CalendarTimeGridWeek } from "./components/CalendarTimeGridWeek";
 //import { FullAppointmentData } from "./types";
 import { AppointmentEditDialog } from "@/app/components/AppointmentEditDialog";
