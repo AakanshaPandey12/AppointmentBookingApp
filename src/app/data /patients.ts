@@ -1,0 +1,7 @@
+import { Patient } from "../types";
+export const patients: Patient[] = [
+  { id: "1", firstname: "Alice", lastname: "Smith" },
+  { id: "2", firstname: "Bob", lastname: "Johnson" },
+  { id: "3", firstname: "Carol", lastname: "Williams" },
+];
+
