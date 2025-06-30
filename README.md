@@ -1,23 +1,5 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Project : 
-1) Please refer the comprehensive word document attached to understand this app 
-
-2) I have created a very basic project for booking an appointment connecting it with backend tables as of now 
-
-3) I do have Database sche,a impovemnt ideas but its better i can discuss rather than typing so much 
-
-4)	Database has been created on Supabase Free Tier as yor api and URL was not connecting so created own database 
-
-Credentials: 
-Project ID: aggpfhafcyvuermzjuwd
-
-Project url : https://aggpfhafcyvuermzjuwd.supabase.co
-
-Project Name : appointmentBooking-Aakansha
-
-API keys : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnZ3BmaGFmY3l2dWVybXpqdXdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA4NjUwMDksImV4cCI6MjA2NjQ0MTAwOX0
-
 ## Getting Started
 
 First, run the development server:
