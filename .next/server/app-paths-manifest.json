@@ -1,7 +1,6 @@
 {
   "/api/categories/route": "app/api/categories/route.js",
-  "/api/patients/route": "app/api/patients/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/api/appointments/route": "app/api/appointments/route.js",
+  "/api/patients/route": "app/api/patients/route.js",
   "/page": "app/page.js"
 }

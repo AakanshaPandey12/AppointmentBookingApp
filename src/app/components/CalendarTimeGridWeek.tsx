@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { addDays, startOfWeek, isSameDay, format, getHours, getMinutes, differenceInMinutes } from "date-fns";
-import { Appointment, Patient, Category, UUID } from "../types";
+import { Appointment, Patient, Category } from "../types";
 import { AppointmentHoverCard } from "./AppointmentHoverCard";
 
 type CalendarTimeGridWeekProps = {
@@ -93,14 +93,14 @@ const todayIdx = days.findIndex(day =>
            </div>
           ))}
           {/* Time grid */}
-          {SLOTS.map(({ hour, min }, slotIdx) => (
+          {SLOTS.map(({ hour, min }) => (
             <React.Fragment key={hour + ":" + min}>
               {/* Time Y-axis label */}
               <div className="min-h-[50px] bg-white py-3 text-center text-xs font-bold whitespace-nowrap">
                 {hour.toString().padStart(2, "0")}:{min.toString().padStart(2, "0")}
               </div>
               {days.map((day, idx) => {
-                const isToday = idx === todayIdx;
+              //  const isToday = idx === todayIdx;
                 const appt = getAppointmentStartingAt(day, hour, min);
 
                 if (appt && typeof appt.id === "string" && appt.id !== "" && !renderedAppointments[appt.id]) {

@@ -8,9 +8,9 @@ import { AppointmentDialog } from "./components/AppointmentDialog";
 import { Appointment } from "./types";
 import { Patient } from "./types";
 import { Category } from "./types";
-import { addDays, isSameDay, startOfMonth, endOfMonth, startOfWeek, endOfWeek, addWeeks, isBefore, isSameWeek  } from "date-fns";
+import { addDays, isSameDay, endOfMonth, startOfWeek, endOfWeek, addWeeks, isBefore } from "date-fns";
 import { CalendarTimeGridWeek } from "./components/CalendarTimeGridWeek";
-import { FullAppointmentData } from "./types";
+//import { FullAppointmentData } from "./types";
 import { AppointmentEditDialog } from "@/app/components/AppointmentEditDialog";
 
 export type FiltersType = {
@@ -34,7 +34,6 @@ export default function HomePage() {
   const [categories, setCategories] = useState<Category[]>([]); 
   const [editDialogOpen, setEditDialogOpen] = useState(false);
   const [editingAppt, setEditingAppt] = useState<Appointment | null>(null);
-  const [createDialogOpen, setCreateDialogOpen] = useState(false);
   const [calendarYear, setCalendarYear] = useState(new Date().getFullYear());
   const [calendarMonth, setCalendarMonth] = useState(new Date().getMonth()); // 0 = January
 
@@ -72,10 +71,6 @@ export default function HomePage() {
 }, []);
 
 
-function handleEdit(appointment: Appointment) {
-  setEditingAppt(appointment);
-  setEditDialogOpen(true);
-}
 
 async function handleUpdateAppointment(appt: Appointment) {
   const res = await fetch("/api/appointments", {
@@ -159,20 +154,7 @@ async function handleSaveAppointment(flatData: {
     });
   }
 
-  // Utility to get all week starts for a month
-function getAllWeekStartsInMonth(year: number, month: number) {
-  const firstOfMonth = new Date(year, month, 1);
-  const lastOfMonth = endOfMonth(firstOfMonth);
-  const weekStarts: Date[] = [];
-  let current = startOfWeek(firstOfMonth, { weekStartsOn: 1 });
-  while (isBefore(current, lastOfMonth) || current.getTime() === lastOfMonth.getTime()) {
-    weekStarts.push(current);
-    current = addWeeks(current, 1);
-  }
-  return weekStarts;
-}
-
-  function filterAppointmentsForWeek(appointments: Appointment[], referenceDate: Date): Appointment[] {
+function filterAppointmentsForWeek(appointments: Appointment[], referenceDate: Date): Appointment[] {
   const weekStart = startOfWeek(referenceDate, { weekStartsOn: 1 }); // Monday
   const weekEnd = endOfWeek(referenceDate, { weekStartsOn: 1 });     // Sunday
 

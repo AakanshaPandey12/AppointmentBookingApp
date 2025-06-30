@@ -1,6 +1,4 @@
 "use client";
-import { useState } from "react";
-import { Category, Patient } from "../../types";
 import {Button} from  "@/app/components/ui/button";
 
 type FiltersType = {

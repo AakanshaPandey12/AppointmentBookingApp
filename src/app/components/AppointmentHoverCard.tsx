@@ -8,7 +8,6 @@ import {
 import { Appointment } from "../types";
 import { format } from "date-fns";
 import { Patient, Category } from "../types"; // Assuming you've added types
-import { UUID } from "../types";
 type AppointmentHoverCardProps = {
   appointment: Appointment;
   patients: Patient[];

@@ -2,7 +2,7 @@
 import { Appointment } from "../types";
 //import { categories } from "../data /categories";
 //import { patients } from "../data /patients";
-import { format, isSameDay, compareAsc } from "date-fns";
+import { format, compareAsc } from "date-fns";
 import { Calendar, MapPin, User2, Info } from "lucide-react"; // Icon imports
 
 type AppointmentListProps = {
